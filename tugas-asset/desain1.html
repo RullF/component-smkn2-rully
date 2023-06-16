@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="desain1.css">
+    <title>Responsive Navbar</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <input type="checkbox" name="" id="check">
+            
+            <div class="logo-container">
+                <h3 class="logo">Rull<span>Xpress</span></h3>
+            </div>
+
+            <div class="nav-btn">
+                <div class="nav-links">
+                    <ul>
+                        <li class="nav-link" style="--i: .6s">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="nav-link" style="--i: .85s">
+                            <a href="#">Menu<i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="dropdown-link">
+                                        <a href="#">Link 1</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">Link 2</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">Link 3<i class="fas fa-caret-down"></i></a>
+                                        <div class="dropdown second">
+                                            <ul>
+                                                <li class="dropdown-link">
+                                                    <a href="#">Link 1</a>
+                                                </li>
+                                                <li class="dropdown-link">
+                                                    <a href="#">Link 2</a>
+                                                </li>
+                                                <li class="dropdown-link">
+                                                    <a href="#">Link 3</a>
+                                                </li>
+                                                <li class="dropdown-link">
+                                                </li>
+                                                <div class="arrow"></div>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">Link 4</a>
+                                    </li>
+                                    <div class="arrow"></div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-link" style="--i: 1.1s">
+                            <a href="#">Services<i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="dropdown-link">
+                                        <a href="#">Link 1</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">Link 2</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">Link 3<i class="fas fa-caret-down"></i></a>
+                                        <div class="dropdown second">
+                                            <ul>
+                                                <li class="dropdown-link">
+                                                    <a href="#">Link 1</a>
+                                                </li>
+                                                <li class="dropdown-link">
+                                                    <a href="#">Link 2</a>
+                                                </li>
+                                                <li class="dropdown-link">
+                                                    <a href="#">Link 3</a>
+                                                </li>
+                                                <li class="dropdown-link">
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">Link 4</a>
+                                    </li>
+                                    <div class="arrow"></div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-link" style="--i: 1.35s">
+                            <a href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="log-sign" style="--i: 1.8s">
+                    <a href="#" class="btn transparent">Log in</a>
+                    <a href="#" class="btn solid">Sign up</a>
+                </div>
+            </div>
+
+            <div class="hamburger-menu-container">
+                <div class="hamburger-menu">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="cards">
+                <div class="card">
+                  <h2 class="card-title">Kera</h2>
+                  <img src="https://images.unsplash.com/photo-1615038552039-e1b271f14ec8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW9ua2V5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                  <p class="card-desc">kera atau monyet adalah hewan yang sangat sosial, dan hampir semuanya hidup dalam pasukan yang terdiri dari beberapa betina dengan anak dan jantan tunggal atau beberapa jantan. Biasanya, betina tinggal di pasukan tempat mereka dilahirkan dan dengan demikian memiliki hubungan erat satu sama lain</p>
+                </div>
+              </div>
+        </section>
+        <div class="wrap">
+            <button class="button">Submit</button>
+          </div>
+    </main>
+</body>
+<script>
+    (function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+</script>
+</html>
